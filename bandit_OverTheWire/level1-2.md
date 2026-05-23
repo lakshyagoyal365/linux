@@ -2,7 +2,7 @@
 Go to website https://overthewire.org/wargames/bandit for hint of each level.
 
 ## 🎯 Challenge
-The goal is to find the password for the next level which is stored in a file called `-` located in the home directory
+The goal is to find the password for the next level which is stored in a file called `-` located in the home directory.
 We are given:
 - Host: `bandit.labs.overthewire.org`
 - Port: `2220`
@@ -36,7 +36,7 @@ In the previous level we retrieved the password for [bandit1](level0-1.md)
    ```
 (Note: The password will remain hidden as you type — this is normal.)
 
-3. **Retrieve password for Level1**
+4. **Retrieve password for Level2**
 
 - Once logged in, list files
 ```bash
@@ -44,13 +44,31 @@ ls
  ```
 ![Diagram of process](assets/2_2.png)
 
-- Read the file **readme**
+- Read the file `-`
 ```bash
-cat readme
+cat ./-
 ```
+<details>
+
+- Most commands interpret `-` as meaning “read from standard input”
+- So when you type
+```bash
+cat -
+```
+
+cat waits for you to type something manually, because it thinks you want to feed it input interactively.
+
+![Diagram of process](assets/2_5.png)
+
+- By writing `./-`, you’re telling the shell: “Look in the current directory (./) for a file literally named `-`.”
+</details>
+
 ![Diagram of process](assets/2_3.png)
+
 You can copy the password
-- Exit the session
+
+
+- **Exit the session**
 ```bash
 exit 
    ```
@@ -67,9 +85,9 @@ exit
 - `exit` : closes current shell session
 </details>
 
-4. **Save the password on local system**
+5. **Save the password on local system**
 
-Saving password to the file **pswd.txt**
+    Saving password to the file **pswd.txt**
    ```bash
    echo "263JGJPfgU6LtdEvgfWU1XP5yac29mFx__laksh">>pswd.txt
    ```
@@ -84,7 +102,8 @@ Saving password to the file **pswd.txt**
 
 You can combine `echo` with redirection operators (> or >>) to save text into files
 
-`echo "smth">filename` : Creates file if don't exist or overwrites the existing file with given text
+`echo "smth">filename` : Creates file if don't exist or overwrites the existing file with given text.
+
 `echo "smth">>filename` : Appends text to the end of a file without deleting what’s already inside.
 </details>
 
