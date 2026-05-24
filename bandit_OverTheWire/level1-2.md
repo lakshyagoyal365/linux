@@ -7,7 +7,7 @@ We are given:
 - Host: `bandit.labs.overthewire.org`
 - Port: `2220`
 - Username: `bandit1`
-- Password: `ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If__laksh`
+- Password: `(use the one from Level 0→1)`
 
 In the previous level we retrieved the password for [bandit1](level0-1.md)
 ## 📝 Steps
@@ -35,6 +35,8 @@ In the previous level we retrieved the password for [bandit1](level0-1.md)
    ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If__laksh 
    ```
 (Note: The password will remain hidden as you type — this is normal.)
+
+⚠️ **Disclaimer**: Password is intentionally altered. Use the actual one you retrieved in the previous level.
 
 4. **Retrieve password for Level2**
 
@@ -88,9 +90,9 @@ exit
 5. **Save the password on local system**
 
     Saving password to the file **pswd.txt**
-   ```bash
-   echo "263JGJPfgU6LtdEvgfWU1XP5yac29mFx__laksh">>pswd.txt
-   ```
+```bash
+echo "263JGJPfgU6LtdEvgfWU1XP5yac29mFx__laksh">>pswd.txt
+```
   
 ![Diagram of process](assets/2_4.png)
 
@@ -99,12 +101,13 @@ exit
 - `mkdir` : make directory
 - `cd` : change directory
 - `echo` : prints text or variable to the terminal
+    <details>
+    You can combine `echo` with redirection operators (> or >>) to save text into files
 
-You can combine `echo` with redirection operators (> or >>) to save text into files
+  `echo "smth">filename` : Creates file if don't exist or overwrites the existing file with given text.
 
-`echo "smth">filename` : Creates file if don't exist or overwrites the existing file with given text.
-
-`echo "smth">>filename` : Appends text to the end of a file without deleting what’s already inside.
+  `echo "smth">>filename` : Appends text to the end of a file without deleting what’s already inside.
+    </details>
 </details>
 
 ---
@@ -119,4 +122,8 @@ man ls
 ```
 
 ---
-#### 💬 Need help? [Text me on WhatsApp ➡️](https://wa.me/918619372532?text=Hello)
+#### 💬 Need help? 
+- [ExplainShell](https://explainshell.com): Paste any command (like `ls -lh`) and it breaks down each flag and argument.
+- Reading resource :  [Linux Command Line and Shell Scripting Bible](https://github.com/linuxqueenn12/popular-Hacking-books-/blob/833e3e07dea7c463137ac6b689e1eba3236a5029/Linux%20Command%20Line%20and%20Shell%20Scripting%20Bible%203rd%20Edition%20%7BPRG%7D.pdf)
+
+[Text me on WhatsApp ➡️](https://wa.me/918619372532?text=Hello)
